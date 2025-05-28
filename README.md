@@ -59,38 +59,40 @@ Este é um projeto de dashboard interativo para visualização de cotações e d
 ## Estrutura do Projeto
 
 O projeto é organizado da seguinte forma, com os principais arquivos e suas responsabilidades:
-.
-├── index.html # Arquivo principal HTML
-│ # - Define a estrutura básica da página do dashboard.
-│ # - Contém os elementos onde os dados e gráficos serão renderizados.
-│ # - Inclui os links para os arquivos CSS e os scripts JavaScript.
-│
+## Estrutura do Projeto
 
-├── style.css # Folha de Estilo CSS
-│ # - Contém todas as regras de estilização para a aparência do dashboard.
-│ # - Define o layout, cores, fontes, responsividade e os temas (claro/escuro).
-│
+O projeto possui uma estrutura simples, consistindo nos seguintes arquivos principais na raiz do diretório:
 
-├── script.js # Lógica JavaScript da Aplicação
-│ # - Responsável por toda a interatividade do dashboard.
-│ # - Consome a API da Brapi para buscar dados das ações.
-│ # - Manipula o DOM para exibir os dados e criar os cards das ações.
-│ # - Gerencia a renderização dos gráficos utilizando a biblioteca Chart.js.
-│ # - Implementa a funcionalidade de adicionar/remover ações.
-│ # - Controla a atualização automática dos dados.
-│ # - Gerencia o armazenamento local (localStorage) para persistência de ações e tema.
-│ # - Controla a lógica do tema claro/escuro.
-│
+*   **`index.html`**:
+    *   Arquivo principal HTML que define a estrutura da página do dashboard.
+    *   Contém os elementos onde os dados e gráficos serão renderizados.
+    *   Inclui os links para o arquivo CSS e os scripts JavaScript (bibliotecas externas e o `script.js` do projeto).
 
-└── README.md # Documentação do Projeto
-# - Este arquivo, fornecendo informações sobre o projeto, funcionalidades, como usar, e outros detalhes relevantes.
+*   **`style.css`**:
+    *   Folha de Estilo CSS que contém todas as regras de estilização para a aparência visual do dashboard.
+    *   Define o layout, cores, tipografia, responsividade e os temas (claro/escuro).
 
+*   **`script.js`**:
+    *   Arquivo JavaScript principal que contém toda a lógica da aplicação e interatividade do dashboard.
+    *   Responsável por:
+        *   Consumir a API da Brapi para buscar os dados das ações.
+        *   Manipular o DOM para exibir os dados e criar/atualizar os cards das ações.
+        *   Gerenciar a renderização e atualização dos gráficos utilizando a biblioteca Chart.js.
+        *   Implementar a funcionalidade de adicionar e remover ações.
+        *   Controlar a atualização automática dos dados.
+        *   Gerenciar o armazenamento local (`localStorage`) para persistência das ações monitoradas e do tema escolhido.
+        *   Controlar a lógica de alternância entre o tema claro e escuro.
 
-**Observações Adicionais:**
+*   **`README.md`**:
+    *   Este arquivo, contendo a documentação do projeto.
+    *   Fornece informações sobre as funcionalidades, tecnologias utilizadas, como configurar e usar o dashboard, a estrutura do projeto e possíveis melhorias futuras.
 
-*   **Bibliotecas Externas (via CDN):**
-    *   **Chart.js:** `https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js`
-    *   **Chart.js Date Adapter (date-fns):** `https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js`
+**Observações sobre Dependências Externas:**
+
+As seguintes bibliotecas JavaScript são incluídas diretamente no `index.html` via CDN e não fazem parte dos arquivos locais do projeto:
+
+*   **Chart.js:** Para a criação de gráficos dinâmicos.
+*   **Chart.js Date Adapter (date-fns):** Para habilitar o Chart.js a trabalhar com eixos de tempo de forma eficiente.
 
 ## Possíveis Melhorias Futuras
 
