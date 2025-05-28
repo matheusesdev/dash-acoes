@@ -58,6 +58,7 @@ Este é um projeto de dashboard interativo para visualização de cotações e d
     *   Utilize o botão no canto superior direito para alternar entre o tema claro e escuro.
 
 ## Estrutura do Projeto
+.
 ├── index.html # Arquivo principal HTML com a estrutura da página
 ├── style.css # Arquivo CSS para estilização
 ├── script.js # Arquivo JavaScript com a lógica da aplicação
