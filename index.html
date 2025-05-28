@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Avançado de Ações v2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+    <div class="container">
+        <header class="app-header">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
+                    <path d="M12 2L1 9l4 1.5V15h3v-5h8v5h3v-4.5L23 9l-5-3.5V2h-3v2.5L12 2zm0 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM7 19h10v2H7v-2z"/>
+                </svg>
+                <h1>Meu Dashboard de Ações</h1>
+            </div>
+            <div class="header-actions">
+                <div class="controls">
+                    <input type="text" id="tickerInput" placeholder="Adicionar Ação (ex: PETR4)" />
+                    <button id="addStockBtn" title="Adicionar Ação">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        Adicionar
+                    </button>
+                </div>
+                <button id="themeToggleBtn" class="theme-toggle" title="Alternar Tema">
+                    <svg id="themeIconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3zm0-7v4h-2V2h2zm0 18v4h-2v-4h2zm-9-9h-4v2h4v-2zm18 0h-4v2h4v-2zM5.64 5.64L3.51 3.51l1.41-1.41 2.12 2.12-1.41 1.41zm12.72 12.72l2.12 2.12-1.41 1.41-2.12-2.12 1.41-1.41zM3.51 20.49l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41zm14.85-14.85l-2.12-2.12 1.41-1.41 2.12 2.12-1.41 1.41z"/>
+                    </svg>
+                    <svg id="themeIconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" style="display:none;">
+                         <path d="M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <section class="portfolio-summary">
+            <div class="summary-header">
+                <h2>Resumo da Carteira (Monitoradas)</h2>
+            </div>
+            <div class="summary-content">
+                <div class="summary-kpis">
+                    <div class="summary-item">
+                        <span class="summary-label">Total de Ativos</span>
+                        <span id="totalAssets" class="summary-value">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Variação Média Dia</span>
+                        <span id="avgChange" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Melhor Desempenho</span>
+                        <span id="bestPerformer" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Pior Desempenho</span>
+                        <span id="worstPerformer" class="summary-value">-</span>
+                    </div>
+                </div>
+                <div class="summary-chart-container">
+                    <h3>Performance Diária (%)</h3>
+                    <canvas id="dailyPerformanceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <main id="stockDashboard" class="dashboard-grid">
+            <div id="loadingMessage" class="status-message loading" style="display: none;">
+                <div class="spinner"></div>
+                Carregando dados...
+            </div>
+            <div id="errorMessage" class="status-message error-message" style="display: none;"></div>
+             <div id="emptyDashboardMessage" class="status-message empty-message" style="display: block;">
+                Comece adicionando ações ao seu dashboard!
+            </div>
+        </main>
+
+        <footer>
+            <p>Dados fornecidos por <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer">Brapi</a>. Gráficos por <a href="https://www.chartjs.org/" target="_blank" rel="noopener noreferrer">Chart.js</a>.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
